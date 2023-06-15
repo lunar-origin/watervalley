@@ -46,20 +46,62 @@ const study = lab.util.fromObject({
           "items": [
             {
               "type": "text",
-              "content": "この実験では，画面に呈示される数字に対してキーボードで反応していただきます。所要時間は約12分です。",
-              "title": "認知課題"
+              "content": "本実験・調査の実施責任者は岐阜大学教育学部学校教育講座心理学コース4回生の水谷百恵です。\n本実験・調査の参加はあなたの任意によるものです。",
+              "title": "本実験・調査について"
             },
             {
               "required": true,
               "type": "text",
-              "title": "",
-              "content": "実験による多少の疲労は除き，潜在的なリスクや苦痛はありません。また，いつ，いかなる理由でも，実験を中止していただけます。もし，途中で実験・調査を中止したくなった場合は，「ESCキー」を押した後，ウィンドウを閉じることで実験を中止できます。"
+              "title": "1. 本実験・調査の目的",
+              "content": "この実験は大学生の創造性と，柔軟的思考と認知処理の正確さを測定することが目的です。\n"
             },
             {
               "required": true,
               "type": "text",
-              "title": "",
-              "content": "まず始めに練習試行を行い，次に，本試行を行います。"
+              "title": "2. 本実験・調査の手続き",
+              "content": "もし、あなたが本実験・調査に参加した場合、あなたは創造性課題と，認知課題に取り組んでいただきます。\nこの実験・調査の所要時間は約30分程度です。"
+            },
+            {
+              "required": true,
+              "type": "text",
+              "title": "3. 潜在的なリスク・苦痛など",
+              "content": "実験による多少の疲労は除き、潜在的なリスクや苦痛はありません。\nまた、いつ、いかなる理由でも、自由に実験を中止していただけます (6.参加と中止もご参照ください。) 。"
+            },
+            {
+              "required": true,
+              "type": "text",
+              "title": "4.参加による利益",
+              "content": "あなたが本実験・調査に参加されることで心理学の研究の発展に繋がります。"
+            },
+            {
+              "required": true,
+              "type": "text",
+              "title": "5. 匿名性の確保",
+              "content": "本実験・調査によって得られた情報は法律による開示請求を除き、匿名性が維持されます。匿名性は実験参加者番号の付与、統計的解析によって保たれます。収集されたデータは個人が特定できるデータが公表されることは決してありません。二次分析などのため個人を特定できない形で個人データを公開する場合があります。加えて、統計的に処理されたデータを学会発表や論文として公表する場合があります。"
+            },
+            {
+              "required": true,
+              "type": "text",
+              "title": "6. 参加と中止",
+              "content": "あなたは本実験・調査への参加もしくは不参加を自由に選択できます。また、参加した場合でも、いつでも、どのような理由でも、途中で実験・調査を中止することができます。もし、途中で実験・調査を中止したくなった場合は、「ESCキー」を押した後、ウィンドウを閉じることで実験・調査を中止できます。"
+            },
+            {
+              "required": true,
+              "type": "text",
+              "title": "7. 実験・調査実施者への問い合わせ",
+              "content": "本実験・調査に対して質問がある場合は、実施責任者にお問い合わせください。"
+            },
+            {
+              "required": true,
+              "type": "checkbox",
+              "label": "実験・調査への参加に同意いただけますか？同意いただける方はチェックをお願いします。同意いただけない方は、ESCを押した後、ウィンドウを閉じて下さい。",
+              "options": [
+                {
+                  "label": "上記の説明をよく読み、理解した上で、実験・調査への参加に同意します。",
+                  "coding": "informedConsent"
+                }
+              ],
+              "name": "esc"
             }
           ],
           "scrollTop": true,
@@ -71,7 +113,218 @@ const study = lab.util.fromObject({
           },
           "parameters": {},
           "messageHandlers": {},
-          "title": "explanation 1"
+          "title": "informedConsent"
+        },
+        {
+          "type": "lab.flow.Sequence",
+          "files": {},
+          "responses": {
+            "": ""
+          },
+          "parameters": {},
+          "messageHandlers": {},
+          "title": "Sequence0",
+          "content": [
+            {
+              "type": "lab.html.Page",
+              "items": [
+                {
+                  "type": "text",
+                  "title": "まず始めに，創造性課題を行います。"
+                }
+              ],
+              "scrollTop": true,
+              "submitButtonText": "練習試行を始める →",
+              "submitButtonPosition": "right",
+              "files": {},
+              "responses": {
+                "": ""
+              },
+              "parameters": {},
+              "messageHandlers": {},
+              "title": "task "
+            },
+            {
+              "type": "lab.canvas.Screen",
+              "content": [
+                {
+                  "type": "i-text",
+                  "left": 0,
+                  "top": 0,
+                  "angle": 0,
+                  "width": 160,
+                  "height": 45.2,
+                  "stroke": null,
+                  "strokeWidth": 1,
+                  "fill": "black",
+                  "text": "紙コップ",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                  "fontSize": "40",
+                  "fontFamily": "sans-serif",
+                  "lineHeight": 1.16,
+                  "textAlign": "center"
+                }
+              ],
+              "viewport": [
+                800,
+                600
+              ],
+              "files": {},
+              "responses": {
+                "": ""
+              },
+              "parameters": {},
+              "messageHandlers": {},
+              "title": "task practice",
+              "timeout": "3000"
+            },
+            {
+              "type": "lab.html.Page",
+              "items": [
+                {
+                  "type": "text",
+                  "title": "次に本試行の１題目を始めます。"
+                }
+              ],
+              "scrollTop": true,
+              "submitButtonText": "始める →",
+              "submitButtonPosition": "right",
+              "files": {},
+              "responses": {
+                "": ""
+              },
+              "parameters": {},
+              "messageHandlers": {},
+              "title": "task1 explanation"
+            },
+            {
+              "type": "lab.canvas.Screen",
+              "content": [
+                {
+                  "type": "i-text",
+                  "left": 0,
+                  "top": 0,
+                  "angle": 0,
+                  "width": 120,
+                  "height": 45.2,
+                  "stroke": null,
+                  "strokeWidth": 1,
+                  "fill": "black",
+                  "text": "レンガ",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                  "fontSize": "40",
+                  "fontFamily": "sans-serif",
+                  "lineHeight": 1.16,
+                  "textAlign": "center"
+                }
+              ],
+              "viewport": [
+                800,
+                600
+              ],
+              "files": {},
+              "responses": {
+                "": ""
+              },
+              "parameters": {},
+              "messageHandlers": {},
+              "title": "task1",
+              "timeout": "3000"
+            },
+            {
+              "type": "lab.html.Page",
+              "items": [
+                {
+                  "type": "text",
+                  "title": "次に本試行の2題目を始めます。"
+                }
+              ],
+              "scrollTop": true,
+              "submitButtonText": "始める →",
+              "submitButtonPosition": "right",
+              "files": {},
+              "responses": {
+                "": ""
+              },
+              "parameters": {},
+              "messageHandlers": {},
+              "title": "task2 explanation"
+            },
+            {
+              "type": "lab.canvas.Screen",
+              "content": [
+                {
+                  "type": "i-text",
+                  "left": 0,
+                  "top": 0,
+                  "angle": 0,
+                  "width": 2,
+                  "height": 45.2,
+                  "stroke": null,
+                  "strokeWidth": 1,
+                  "fill": "black",
+                  "text": "",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                  "fontSize": "40",
+                  "fontFamily": "sans-serif",
+                  "lineHeight": 1.16,
+                  "textAlign": "center"
+                },
+                {
+                  "type": "i-text",
+                  "left": 0,
+                  "top": 0,
+                  "angle": 0,
+                  "width": 128,
+                  "height": 36.16,
+                  "stroke": null,
+                  "strokeWidth": 1,
+                  "fill": "black",
+                  "text": "段ボール",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                  "fontSize": 32,
+                  "fontFamily": "sans-serif",
+                  "lineHeight": 1.16,
+                  "textAlign": "center"
+                }
+              ],
+              "viewport": [
+                800,
+                600
+              ],
+              "files": {},
+              "responses": {
+                "": ""
+              },
+              "parameters": {},
+              "messageHandlers": {},
+              "title": "task2",
+              "timeout": "3000"
+            },
+            {
+              "type": "lab.html.Page",
+              "items": [
+                {
+                  "type": "text",
+                  "title": "これで創造性課題は終わります。次の課題に移ります。"
+                }
+              ],
+              "scrollTop": true,
+              "submitButtonText": "次へ →",
+              "submitButtonPosition": "right",
+              "files": {},
+              "responses": {
+                "": ""
+              },
+              "parameters": {},
+              "messageHandlers": {},
+              "title": "explanation next "
+            }
+          ]
         },
         {
           "type": "lab.html.Page",
